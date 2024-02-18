@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block titulo %} Detalle del departamento {% endblock %}
+{% block contenido %}
+    <h2>Datos del departamento</h2>
+    {% if departamento %}
+        <ul>
+            <li>
+                {{ departamento.nombre }}
+            </li>
+            <li>
+                {{ departamento.telefono }}
+            </li>
+            <li>
+                <a href="/appEmpresaDjango/departamentos/{{ departamento.id }}/empleados">
+                    Ver empleados</a>
+            </li>
+        </ul>
+    {% else %}
+        <p>No existe este departamento.</p>
+    {% endif %}
+{% endblock %}
